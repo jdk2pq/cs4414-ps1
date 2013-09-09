@@ -4,8 +4,6 @@
 // University of Virginia - cs4414 Fall 2013
 // Weilin Xu and David Evans
 // Version 0.1
-//
-// HW1 - Jake Kenneally (jdk2pq)
 
 extern mod extra;
 
@@ -56,7 +54,7 @@ fn new_connection_callback(new_conn :net_tcp::TcpNewConnection, _killch: std::co
 				            } else {
             					if os::path_exists(&Path("."+path)) {
             						let res = io::read_whole_file_str(&Path("."+path));
-                                    "HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=UTF-8\r\n\r\n" + res.unwrap()
+                                    res.unwrap()
             					} else {
                                     default
               					}
